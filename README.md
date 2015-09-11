@@ -24,6 +24,7 @@ pb1sa5dxfoo8q551pt1yw
 $ zbase32-decode pb1sa5dxfoo8q551pt1yw
 hello, world
 $ printf '\x01binary!!!1\x00' | zbase32-encode
+yftg15ubqjh1nejbgryy
 $ zbase32-decode yftg15ubqjh1nejbgryy | hexdump -C
 00000000  01 62 69 6e 61 72 79 21  21 21 31 00              |.binary!!!1.|
 0000000c

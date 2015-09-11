@@ -1,0 +1,4 @@
+/zbase32-encode
+/zbase32-decode
+*.test
+/virtualenv/

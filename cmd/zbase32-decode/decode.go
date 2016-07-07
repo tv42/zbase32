@@ -39,7 +39,7 @@ func main() {
 		for _, input := range flag.Args() {
 			decoded, err := zbase32.DecodeString(input)
 			if err != nil {
-				log.Fatal(err)
+				log.Fatalf("decoding input: %q: %v", input, err)
 			}
 			if _, err := os.Stdout.Write(decoded); err != nil {
 				log.Fatal(err)

@@ -1,6 +1,7 @@
 package zbase32_test
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 
@@ -22,4 +23,18 @@ func ExampleNewEncoder() {
 	encoder.Close()
 	// Output:
 	// c3zs6ydncf3y
+}
+
+func ExampleNewDecoder() {
+	input := []byte("c3zs6ydncf3y")
+	decoder := zbase32.NewDecoder(bytes.NewReader(input))
+	output := make([]byte, 16)
+	n, err := decoder.Read(output)
+	if err != nil {
+		fmt.Println("error:", err)
+		return
+	}
+	fmt.Println(output[:n])
+	// Output:
+	// [102 111 111 0 98 97 114]
 }

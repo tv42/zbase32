@@ -58,7 +58,7 @@ func main() {
 			}
 		}
 		if err := scanner.Err(); err != nil {
-			log.Fatalf("reading standard input:", err)
+			log.Fatalf("reading standard input: %v", err)
 		}
 	}
 }

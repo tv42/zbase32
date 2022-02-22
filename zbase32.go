@@ -100,6 +100,8 @@ func encode(dst, src []byte, bits int) int {
 //
 // EncodeBits is not appropriate for use on individual blocks of a
 // large data stream.
+//
+// Panics if bits is greater than number of bits in src.
 func EncodeBits(dst, src []byte, bits int) int {
 	if bits < 0 {
 		return 0
@@ -125,6 +127,8 @@ func EncodeToString(src []byte) string {
 
 // EncodeBitsToString returns the z-base-32 encoding of the specified
 // number of bits of src.
+//
+// Panics if bits is greater than number of bits in src.
 func EncodeBitsToString(src []byte, bits int) string {
 	dst := make([]byte, EncodedLen(len(src)))
 	n := EncodeBits(dst, src, bits)
